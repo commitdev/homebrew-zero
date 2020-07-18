@@ -7,18 +7,19 @@ class Zero < Formula
 
   if OS.mac?
     url "https://github.com/commitdev/zero/releases/download/v0.0.1/zero_0.0.1_Darwin_x86_64.tar.gz"
-    sha256 "762337d1c7baf2b5d9ad6e64ac3d58dde085c7987299a2200b0c8cc80b6d57f0"
+    sha256 "da4042c4b6fcfb29d57d8b600ce47ebc0dff94e8fad0f0a20e933e9767870fe9"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/commitdev/zero/releases/download/v0.0.1/zero_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "64a5e7fb07dca4ad02e2049c77376fbcf4034d7f510e24f2109e4efd996eaaa8"
+      sha256 "32f0d2589d734797ed4cf747412eb844a0dff1785edf6863841673e0241f040a"
     end
   end
   
-  depends_on "git"
-  depends_on "terraform"
-  depends_on "jq"
-  depends_on "awscli"
+  depends_on "git" => :optional
+  depends_on "terraform" => :optional
+  depends_on "jq" => :optional
+  depends_on "awscli" => :optional
+  depends_on "kubectl" => :optional
 
   def install
     bin.install "zero"
