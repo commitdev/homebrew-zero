@@ -2,16 +2,16 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/commitdev/zero/releases/download/v0.0.1/zero_0.0.1_Darwin_x86_64.tar.gz"
-    sha256 "da4042c4b6fcfb29d57d8b600ce47ebc0dff94e8fad0f0a20e933e9767870fe9"
+    url "https://github.com/commitdev/zero/releases/download/v0.0.2/zero_0.0.2_Darwin_x86_64.tar.gz"
+    sha256 "4f0e3548fb028e309e1b9b5c513ec3fcaa6ae9f5368afbd43a63512f4e979112"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.0.1/zero_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "32f0d2589d734797ed4cf747412eb844a0dff1785edf6863841673e0241f040a"
+      url "https://github.com/commitdev/zero/releases/download/v0.0.2/zero_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "a985b77dd346a4b995df9c684df57962a9770568b5a4a32a510858388f2dd33a"
     end
   end
   
@@ -20,6 +20,7 @@ class Zero < Formula
   depends_on "jq" => :optional
   depends_on "awscli" => :optional
   depends_on "kubectl" => :optional
+  depends_on "wget" => :optional
 
   def install
     bin.install "zero"
