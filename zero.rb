@@ -2,16 +2,16 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.0.2"
+  version "0.0.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/commitdev/zero/releases/download/v0.0.2/zero_0.0.2_Darwin_x86_64.tar.gz"
-    sha256 "4f0e3548fb028e309e1b9b5c513ec3fcaa6ae9f5368afbd43a63512f4e979112"
+    url "https://github.com/commitdev/zero/releases/download/v0.0.3/zero_0.0.3_Darwin_x86_64.tar.gz"
+    sha256 "3014c2eacd6855558f41de1fce55e2df864b7e251959b78e943c2c264511c7f4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.0.2/zero_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "a985b77dd346a4b995df9c684df57962a9770568b5a4a32a510858388f2dd33a"
+      url "https://github.com/commitdev/zero/releases/download/v0.0.3/zero_0.0.3_Linux_x86_64.tar.gz"
+      sha256 "cb71c65228098acbb300f127d9256c393aef9cc5912b8dd69df703222237eee1"
     end
   end
   
