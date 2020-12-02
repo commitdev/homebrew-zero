@@ -2,19 +2,18 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.0.3"
+  version "0.0.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/commitdev/zero/releases/download/v0.0.3/zero_0.0.3_Darwin_x86_64.tar.gz"
-    sha256 "3014c2eacd6855558f41de1fce55e2df864b7e251959b78e943c2c264511c7f4"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.0.3/zero_0.0.3_Linux_x86_64.tar.gz"
-      sha256 "cb71c65228098acbb300f127d9256c393aef9cc5912b8dd69df703222237eee1"
-    end
+    url "https://github.com/commitdev/zero/releases/download/v0.0.4/zero_0.0.4_Darwin_x86_64.tar.gz"
+    sha256 "82359e0ae643acb6e9089f8d5e8de0f4de93ac89923fbdef4c9bf44c80b5c666"
   end
-  
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/commitdev/zero/releases/download/v0.0.4/zero_0.0.4_Linux_x86_64.tar.gz"
+    sha256 "ad055d9e2eeb7a13588513bbe67a0dd1ad37858e1a062ddfe7b92e511217313f"
+  end
+
   depends_on "git" => :optional
   depends_on "terraform" => :optional
   depends_on "jq" => :optional
