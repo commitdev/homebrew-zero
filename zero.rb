@@ -5,20 +5,28 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.2.1"
+  version "0.2.2"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.1/zero_0.2.1_Darwin_x86_64.tar.gz"
-      sha256 "81a470311fee4727c053a2ab7063630de934441820a94dc619f76abfac0650c3"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "520aa5a65c3b46ac679c4e05caba92b96e2622d818ce819b304dc901d5d5745d"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "798c717585a769f471e890ffa5239f872ee73880bbb0c35d3deb5475783ae414"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.1/zero_0.2.1_Linux_x86_64.tar.gz"
-      sha256 "38ad5812b1cf39ff6c0d018c369e1776f4732d4b9d841e7d37fa43cce8765867"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Linux_x86_64.tar.gz"
+      sha256 "09a88e2294135358485827e3d85615e55f8a29467edf87e5b7f55569f09d7237"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Linux_arm64.tar.gz"
+      sha256 "b75707704ebc3f9c5b443698eece73c4f50ad09cc5396cbdf680ffd544e1ae2d"
     end
   end
 
