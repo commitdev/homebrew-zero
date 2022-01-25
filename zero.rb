@@ -6,7 +6,6 @@ class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
   version "0.2.2"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
