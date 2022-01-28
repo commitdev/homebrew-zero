@@ -5,27 +5,43 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Darwin_x86_64.tar.gz"
-      sha256 "520aa5a65c3b46ac679c4e05caba92b96e2622d818ce819b304dc901d5d5745d"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Darwin_arm64.tar.gz"
-      sha256 "798c717585a769f471e890ffa5239f872ee73880bbb0c35d3deb5475783ae414"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Darwin_arm64.tar.gz"
+      sha256 "d1be4f6c48e21ee33bfddde55b06fd7e6e8bb3a7efe6f770c99f0928a1a4652c"
+
+      def install
+        bin.install "zero"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Darwin_x86_64.tar.gz"
+      sha256 "922d7c460b25063e45dc13f4d9e6cfd61bd87554f6bf56dff4d21863e45e5744"
+
+      def install
+        bin.install "zero"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Linux_x86_64.tar.gz"
-      sha256 "09a88e2294135358485827e3d85615e55f8a29467edf87e5b7f55569f09d7237"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.2/zero_0.2.2_Linux_arm64.tar.gz"
-      sha256 "b75707704ebc3f9c5b443698eece73c4f50ad09cc5396cbdf680ffd544e1ae2d"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Linux_arm64.tar.gz"
+      sha256 "7ce22984e01ee908854498ecc9a1f7281ab598f4c17efe7d682e004b00d29af5"
+
+      def install
+        bin.install "zero"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Linux_x86_64.tar.gz"
+      sha256 "9bfa20b4353062dc9ec3dd96e1814f8fd8163a29a62ab60a486e09f1c7f9f470"
+
+      def install
+        bin.install "zero"
+      end
     end
   end
 
@@ -35,10 +51,6 @@ class Zero < Formula
   depends_on "awscli" => :optional
   depends_on "kubectl" => :optional
   depends_on "wget" => :optional
-
-  def install
-    bin.install "zero"
-  end
 
   test do
     system "#{bin}/zero version"
