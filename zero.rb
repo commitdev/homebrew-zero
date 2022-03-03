@@ -5,20 +5,20 @@
 class Zero < Formula
   desc "Allow startup developers to ship to production on day 1."
   homepage "https://github.com/commitdev/zero"
-  version "0.2.3"
+  version "0.2.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Darwin_arm64.tar.gz"
-      sha256 "d1be4f6c48e21ee33bfddde55b06fd7e6e8bb3a7efe6f770c99f0928a1a4652c"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.4/zero_0.2.4_Darwin_arm64.tar.gz"
+      sha256 "9950de2105829b6e7697f34cac916eee9582753eaf4beb69d66bfb58aed6dd82"
 
       def install
         bin.install "zero"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Darwin_x86_64.tar.gz"
-      sha256 "922d7c460b25063e45dc13f4d9e6cfd61bd87554f6bf56dff4d21863e45e5744"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.4/zero_0.2.4_Darwin_x86_64.tar.gz"
+      sha256 "1c8eb5baa4ebf8075eecf6827b9c883a4d6c8fa589ddc305c26607d9b2dbe5f2"
 
       def install
         bin.install "zero"
@@ -28,16 +28,16 @@ class Zero < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Linux_arm64.tar.gz"
-      sha256 "7ce22984e01ee908854498ecc9a1f7281ab598f4c17efe7d682e004b00d29af5"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.4/zero_0.2.4_Linux_arm64.tar.gz"
+      sha256 "5f72154b48da9e42db44fd73ba7bdd597e9becf4e0713a02217884421149b5ac"
 
       def install
         bin.install "zero"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/commitdev/zero/releases/download/v0.2.3/zero_0.2.3_Linux_x86_64.tar.gz"
-      sha256 "9bfa20b4353062dc9ec3dd96e1814f8fd8163a29a62ab60a486e09f1c7f9f470"
+      url "https://github.com/commitdev/zero/releases/download/v0.2.4/zero_0.2.4_Linux_x86_64.tar.gz"
+      sha256 "0436b0e9d2534af192383da1127d2fcd9716d0cc049ee31dbef40abdb29c1f78"
 
       def install
         bin.install "zero"
